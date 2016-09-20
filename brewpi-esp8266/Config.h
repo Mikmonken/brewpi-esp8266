@@ -127,25 +127,23 @@
 // Enable the LCD display. Without this, a NullDisplay is used
 //
 #ifndef BREWPI_LCD
-#define BREWPI_LCD 1
-#define BREWPI_IIC 1
-#define BACKLIGHT_AUTO_OFF_PERIOD 0 // Disable backlight auto off
+#define BREWPI_LCD 0
 #endif
 //
 //////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////
 //
-#ifndef BREWPI_BUZZER
-#define BREWPI_BUZZER 0
-#endif
+//#ifndef BREWPI_BUZZER   //commented out as assumed this disabled buzzer function
+//#define BREWPI_BUZZER 0 //commented out as assumed this disabled buzzer function
+//#endif                  //commented out as assumed this disabled buzzer function
 //
 //////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////
 //
 // #ifndef BREWPI_ROTARY_ENCODER
-#define BREWPI_ROTARY_ENCODER 0
+#define BREWPI_ROTARY_ENCODER 1   //amended from 0 - 1 to see if this activates the rotart encoded
 // #endif
 //
 //////////////////////////////////////////////////////////////////////////
@@ -222,6 +220,11 @@
 //#define rotaryBPin 1 // INT3
 //#define rotarySwitchPin 0 // INT2
 
+//Rotart Pins have been copied from vitotai config.h for piless version of brewpi pin ouit for rotary pin B has been changed
+
+#define rotaryAPin NODEMCU_PIN_D8 
+#define rotaryBPin NODEMCU_PIN_D3   //amended from D7 to D3 removing buzzer function
+#define rotarySwitchPin NODEMCU_PIN_D4
 
 #ifdef ESP8266
 #define ESP8266_WiFi 1			// This disables Serial and enables WiFi support 
